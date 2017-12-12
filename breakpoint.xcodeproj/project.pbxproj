@@ -15,6 +15,7 @@
 		DE26BBED1FDDC55300E5489F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE26BBEC1FDDC55300E5489F /* Assets.xcassets */; };
 		DE26BBF01FDDC55300E5489F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE26BBEE1FDDC55300E5489F /* LaunchScreen.storyboard */; };
 		DE26BBFD1FDDC82700E5489F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE26BBFC1FDDC82700E5489F /* GoogleService-Info.plist */; };
+		DE3686921FE0582500A74AEC /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3686911FE0582500A74AEC /* MeVC.swift */; };
 		DE7311D51FE011BE00FEE753 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7311D41FE011BE00FEE753 /* AuthService.swift */; };
 		DEFACE461FDDC99E00A30BE5 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFACE451FDDC99E00A30BE5 /* DataService.swift */; };
 		DEFACE481FDDDBBC00A30BE5 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFACE471FDDDBBC00A30BE5 /* AuthVC.swift */; };
@@ -36,6 +37,7 @@
 		DE26BBEF1FDDC55300E5489F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE26BBF11FDDC55300E5489F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE26BBFC1FDDC82700E5489F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DE3686911FE0582500A74AEC /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
 		DE7311D41FE011BE00FEE753 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		DEFACE451FDDC99E00A30BE5 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		DEFACE471FDDDBBC00A30BE5 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				DE26BBE71FDDC55300E5489F /* GroupsVC.swift */,
 				DEFACE471FDDDBBC00A30BE5 /* AuthVC.swift */,
 				DEFACE491FDDDBF600A30BE5 /* LoginVC.swift */,
+				DE3686911FE0582500A74AEC /* MeVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE3686921FE0582500A74AEC /* MeVC.swift in Sources */,
 				DEFACE481FDDDBBC00A30BE5 /* AuthVC.swift in Sources */,
 				DE26BBE81FDDC55300E5489F /* GroupsVC.swift in Sources */,
 				DEFACE4A1FDDDBF600A30BE5 /* LoginVC.swift in Sources */,
