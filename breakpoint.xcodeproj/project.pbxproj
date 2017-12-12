@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		7FA0C53EAA0D48490C47CEF3 /* Pods_breakpoint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B625402A5BE7071FFB002E95 /* Pods_breakpoint.framework */; };
 		DE26BBE41FDDC55300E5489F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE26BBE31FDDC55300E5489F /* AppDelegate.swift */; };
-		DE26BBE61FDDC55300E5489F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE26BBE51FDDC55300E5489F /* FirstViewController.swift */; };
-		DE26BBE81FDDC55300E5489F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE26BBE71FDDC55300E5489F /* SecondViewController.swift */; };
+		DE26BBE61FDDC55300E5489F /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE26BBE51FDDC55300E5489F /* FeedVC.swift */; };
+		DE26BBE81FDDC55300E5489F /* GroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE26BBE71FDDC55300E5489F /* GroupsVC.swift */; };
 		DE26BBEB1FDDC55300E5489F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE26BBE91FDDC55300E5489F /* Main.storyboard */; };
 		DE26BBED1FDDC55300E5489F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE26BBEC1FDDC55300E5489F /* Assets.xcassets */; };
 		DE26BBF01FDDC55300E5489F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE26BBEE1FDDC55300E5489F /* LaunchScreen.storyboard */; };
@@ -29,8 +29,8 @@
 		B625402A5BE7071FFB002E95 /* Pods_breakpoint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_breakpoint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE26BBE01FDDC55300E5489F /* breakpoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = breakpoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE26BBE31FDDC55300E5489F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE26BBE51FDDC55300E5489F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		DE26BBE71FDDC55300E5489F /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		DE26BBE51FDDC55300E5489F /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		DE26BBE71FDDC55300E5489F /* GroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsVC.swift; sourceTree = "<group>"; };
 		DE26BBEA1FDDC55300E5489F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE26BBEC1FDDC55300E5489F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE26BBEF1FDDC55300E5489F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -112,8 +112,8 @@
 		DE26BBF71FDDC60C00E5489F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DE26BBE51FDDC55300E5489F /* FirstViewController.swift */,
-				DE26BBE71FDDC55300E5489F /* SecondViewController.swift */,
+				DE26BBE51FDDC55300E5489F /* FeedVC.swift */,
+				DE26BBE71FDDC55300E5489F /* GroupsVC.swift */,
 				DEFACE471FDDDBBC00A30BE5 /* AuthVC.swift */,
 				DEFACE491FDDDBF600A30BE5 /* LoginVC.swift */,
 			);
@@ -277,12 +277,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEFACE481FDDDBBC00A30BE5 /* AuthVC.swift in Sources */,
-				DE26BBE81FDDC55300E5489F /* SecondViewController.swift in Sources */,
+				DE26BBE81FDDC55300E5489F /* GroupsVC.swift in Sources */,
 				DEFACE4A1FDDDBF600A30BE5 /* LoginVC.swift in Sources */,
 				DE7311D51FE011BE00FEE753 /* AuthService.swift in Sources */,
 				DE26BBE41FDDC55300E5489F /* AppDelegate.swift in Sources */,
 				DEFACE4E1FDDE11500A30BE5 /* ShadowView.swift in Sources */,
-				DE26BBE61FDDC55300E5489F /* FirstViewController.swift in Sources */,
+				DE26BBE61FDDC55300E5489F /* FeedVC.swift in Sources */,
 				DEFACE4C1FDDDC4300A30BE5 /* InsetTextField.swift in Sources */,
 				DEFACE461FDDC99E00A30BE5 /* DataService.swift in Sources */,
 			);
