@@ -19,7 +19,7 @@ class CreatePostVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         textView.delegate = self
-
+        sendBtn.bindToKeyboard()
     }
 
     @IBAction func sendBtnPressed(_ sender: Any) {
@@ -44,6 +44,7 @@ class CreatePostVC: UIViewController {
 extension CreatePostVC: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         textView.text = ""
+        textView.textColor = #colorLiteral(red: 0.3181318343, green: 0.7672088742, blue: 0.3041909933, alpha: 1)
         sendBtn.backgroundColor = #colorLiteral(red: 0.2033642232, green: 0.2145754993, blue: 0.2726458907, alpha: 1)
     }
 }

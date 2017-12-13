@@ -17,6 +17,9 @@
 		DE26BBFD1FDDC82700E5489F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE26BBFC1FDDC82700E5489F /* GoogleService-Info.plist */; };
 		DE3686921FE0582500A74AEC /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3686911FE0582500A74AEC /* MeVC.swift */; };
 		DE3686941FE0728600A74AEC /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3686931FE0728600A74AEC /* CreatePostVC.swift */; };
+		DE36869A1FE07CB600A74AEC /* BindToKeyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3686991FE07CB600A74AEC /* BindToKeyBoard.swift */; };
+		DE36869C1FE0800700A74AEC /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE36869B1FE0800700A74AEC /* Message.swift */; };
+		DE6D70821FE122FB00D8B34E /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D70811FE122FB00D8B34E /* FeedCell.swift */; };
 		DE7311D51FE011BE00FEE753 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7311D41FE011BE00FEE753 /* AuthService.swift */; };
 		DEFACE461FDDC99E00A30BE5 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFACE451FDDC99E00A30BE5 /* DataService.swift */; };
 		DEFACE481FDDDBBC00A30BE5 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFACE471FDDDBBC00A30BE5 /* AuthVC.swift */; };
@@ -40,6 +43,9 @@
 		DE26BBFC1FDDC82700E5489F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE3686911FE0582500A74AEC /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
 		DE3686931FE0728600A74AEC /* CreatePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
+		DE3686991FE07CB600A74AEC /* BindToKeyBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindToKeyBoard.swift; sourceTree = "<group>"; };
+		DE36869B1FE0800700A74AEC /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		DE6D70811FE122FB00D8B34E /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		DE7311D41FE011BE00FEE753 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		DEFACE451FDDC99E00A30BE5 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		DEFACE471FDDDBBC00A30BE5 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
@@ -131,6 +137,7 @@
 			children = (
 				DEFACE4B1FDDDC4300A30BE5 /* InsetTextField.swift */,
 				DEFACE4D1FDDE11500A30BE5 /* ShadowView.swift */,
+				DE6D70811FE122FB00D8B34E /* FeedCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -138,6 +145,7 @@
 		DE26BBF91FDDC62600E5489F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DE36869B1FE0800700A74AEC /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -145,6 +153,7 @@
 		DE26BBFA1FDDC63300E5489F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				DE3686991FE07CB600A74AEC /* BindToKeyBoard.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -289,7 +298,10 @@
 				DE7311D51FE011BE00FEE753 /* AuthService.swift in Sources */,
 				DE26BBE41FDDC55300E5489F /* AppDelegate.swift in Sources */,
 				DEFACE4E1FDDE11500A30BE5 /* ShadowView.swift in Sources */,
+				DE6D70821FE122FB00D8B34E /* FeedCell.swift in Sources */,
 				DE3686941FE0728600A74AEC /* CreatePostVC.swift in Sources */,
+				DE36869A1FE07CB600A74AEC /* BindToKeyBoard.swift in Sources */,
+				DE36869C1FE0800700A74AEC /* Message.swift in Sources */,
 				DE26BBE61FDDC55300E5489F /* FeedVC.swift in Sources */,
 				DEFACE4C1FDDDC4300A30BE5 /* InsetTextField.swift in Sources */,
 				DEFACE461FDDC99E00A30BE5 /* DataService.swift in Sources */,
