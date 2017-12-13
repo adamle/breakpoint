@@ -39,6 +39,19 @@ class DataService {
         REF_USERS.child(uid).updateChildValues(userData)
     }
     
+    func getUsername(forUID uid: String, handler: @escaping (_ username: String) -> ()) {
+        // Look at the data once, not continuously
+        REF_USERS.observeSingleEvent(of: .value) { (userSnapshot) in
+            guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return}
+            for user in userSnapshot {
+                // key example: of9BsoGWjGfmfnGR6bLw2RWGX682
+                if user.key == uid {
+                    handler(user.childSnapshot(forPath: "email").value as! String)
+                }
+            }
+        }
+    }
+    
     func uploadPost(withMessage message: String, forUID uid: String, withGroupKey groupKey: String?, sendComplete: @escaping (_ status: Bool) -> ()) {
         if groupKey != nil {
             // Send to REF_GROUPS

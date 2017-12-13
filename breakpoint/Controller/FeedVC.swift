@@ -23,7 +23,8 @@ class FeedVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         DataService.instance.getAllFeedMessages { (returnedMessageArray) in
-            self.messageArray = returnedMessageArray
+            // Show the most recent message at the top
+            self.messageArray = returnedMessageArray.reversed()
             self.tableView.reloadData()
         }
     }
@@ -42,7 +43,9 @@ extension FeedVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell") as? FeedCell else { return UITableViewCell()}
         let image = UIImage(named: "defaultProfileImage")
         let message = messageArray[indexPath.row]
-        cell.configureCell(profileImage: image!, email: message.senderID, content: message.content)
+        DataService.instance.getUsername(forUID: message.senderID) { (returnedUsername) in
+            cell.configureCell(profileImage: image!, email: returnedUsername, content: message.content)
+        }
         return cell
     }
 }

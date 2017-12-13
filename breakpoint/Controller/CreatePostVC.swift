@@ -21,6 +21,13 @@ class CreatePostVC: UIViewController {
         textView.delegate = self
         sendBtn.bindToKeyboard()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // If you call this in ViewDidLoad, when you log out, the old user email still stay
+        self.emailLbl.text = Auth.auth().currentUser?.email
+    }
+    
 
     @IBAction func sendBtnPressed(_ sender: Any) {
         if textView.text != "" && textView.text != "Say something here ..." {
