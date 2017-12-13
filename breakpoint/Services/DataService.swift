@@ -63,6 +63,7 @@ class DataService {
     
     func getAllFeedMessages(handler: @escaping (_ messages: [Message]) -> ()) {
         var messageArray = [Message]()
+        
         REF_FEED.observeSingleEvent(of: .value) { (feedMessageSnapshot) in
             // DataSnapshot is sent from Firebase, can have 0 - 100 - more elements
             guard let feedMessageSnapshot = feedMessageSnapshot.children.allObjects as? [DataSnapshot] else { return}
@@ -75,6 +76,22 @@ class DataService {
             }
             
             handler(messageArray)
+        }
+    }
+    
+    func getEmail(forSearchQuery query: String, handler: @escaping (_ emailArray: [String]) -> ()) {
+        var emailArray = [String]()
+        
+        REF_USERS.observe(.value) { (userSnapshot) in
+            guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return}
+            
+            for user in userSnapshot {
+                let email = user.childSnapshot(forPath: "email").value as! String
+                if email.contains(query) && email != Auth.auth().currentUser?.email {
+                    emailArray.append(email)
+                }
+            }
+            handler(emailArray)
         }
     }
     
