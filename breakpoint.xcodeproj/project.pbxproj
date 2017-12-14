@@ -24,6 +24,7 @@
 		DE6D70861FE17B0C00D8B34E /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D70851FE17B0C00D8B34E /* UserCell.swift */; };
 		DE7311D51FE011BE00FEE753 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7311D41FE011BE00FEE753 /* AuthService.swift */; };
 		DEC2C3561FE26A690053B4BE /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C3551FE26A690053B4BE /* GroupCell.swift */; };
+		DEC2C3581FE270B10053B4BE /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C3571FE270B10053B4BE /* Group.swift */; };
 		DEFACE461FDDC99E00A30BE5 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFACE451FDDC99E00A30BE5 /* DataService.swift */; };
 		DEFACE481FDDDBBC00A30BE5 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFACE471FDDDBBC00A30BE5 /* AuthVC.swift */; };
 		DEFACE4A1FDDDBF600A30BE5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFACE491FDDDBF600A30BE5 /* LoginVC.swift */; };
@@ -53,6 +54,7 @@
 		DE6D70851FE17B0C00D8B34E /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		DE7311D41FE011BE00FEE753 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		DEC2C3551FE26A690053B4BE /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		DEC2C3571FE270B10053B4BE /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		DEFACE451FDDC99E00A30BE5 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		DEFACE471FDDDBBC00A30BE5 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		DEFACE491FDDDBF600A30BE5 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				DE36869B1FE0800700A74AEC /* Message.swift */,
+				DEC2C3571FE270B10053B4BE /* Group.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				DE26BBE41FDDC55300E5489F /* AppDelegate.swift in Sources */,
 				DEFACE4E1FDDE11500A30BE5 /* ShadowView.swift in Sources */,
 				DE6D70821FE122FB00D8B34E /* FeedCell.swift in Sources */,
+				DEC2C3581FE270B10053B4BE /* Group.swift in Sources */,
 				DE6D70861FE17B0C00D8B34E /* UserCell.swift in Sources */,
 				DE6D70841FE1717200D8B34E /* CreateGroupVC.swift in Sources */,
 				DE3686941FE0728600A74AEC /* CreatePostVC.swift in Sources */,
