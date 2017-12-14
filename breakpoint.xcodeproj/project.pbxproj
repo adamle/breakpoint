@@ -23,6 +23,7 @@
 		DE6D70841FE1717200D8B34E /* CreateGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D70831FE1717200D8B34E /* CreateGroupVC.swift */; };
 		DE6D70861FE17B0C00D8B34E /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D70851FE17B0C00D8B34E /* UserCell.swift */; };
 		DE7311D51FE011BE00FEE753 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7311D41FE011BE00FEE753 /* AuthService.swift */; };
+		DEC2C3561FE26A690053B4BE /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C3551FE26A690053B4BE /* GroupCell.swift */; };
 		DEFACE461FDDC99E00A30BE5 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFACE451FDDC99E00A30BE5 /* DataService.swift */; };
 		DEFACE481FDDDBBC00A30BE5 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFACE471FDDDBBC00A30BE5 /* AuthVC.swift */; };
 		DEFACE4A1FDDDBF600A30BE5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFACE491FDDDBF600A30BE5 /* LoginVC.swift */; };
@@ -51,6 +52,7 @@
 		DE6D70831FE1717200D8B34E /* CreateGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupVC.swift; sourceTree = "<group>"; };
 		DE6D70851FE17B0C00D8B34E /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		DE7311D41FE011BE00FEE753 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		DEC2C3551FE26A690053B4BE /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		DEFACE451FDDC99E00A30BE5 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		DEFACE471FDDDBBC00A30BE5 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		DEFACE491FDDDBF600A30BE5 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				DEFACE4D1FDDE11500A30BE5 /* ShadowView.swift */,
 				DE6D70811FE122FB00D8B34E /* FeedCell.swift */,
 				DE6D70851FE17B0C00D8B34E /* UserCell.swift */,
+				DEC2C3551FE26A690053B4BE /* GroupCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				DE3686921FE0582500A74AEC /* MeVC.swift in Sources */,
 				DEFACE481FDDDBBC00A30BE5 /* AuthVC.swift in Sources */,
 				DE26BBE81FDDC55300E5489F /* GroupsVC.swift in Sources */,
+				DEC2C3561FE26A690053B4BE /* GroupCell.swift in Sources */,
 				DEFACE4A1FDDDBF600A30BE5 /* LoginVC.swift in Sources */,
 				DE7311D51FE011BE00FEE753 /* AuthService.swift in Sources */,
 				DE26BBE41FDDC55300E5489F /* AppDelegate.swift in Sources */,
