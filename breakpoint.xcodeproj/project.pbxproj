@@ -25,6 +25,7 @@
 		DE7311D51FE011BE00FEE753 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7311D41FE011BE00FEE753 /* AuthService.swift */; };
 		DE77C07E1FE663C40006BC11 /* GroupFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77C07D1FE663C40006BC11 /* GroupFeedCell.swift */; };
 		DE77C0801FE676C00006BC11 /* GroupFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77C07F1FE676C00006BC11 /* GroupFeedVC.swift */; };
+		DE77C0821FE7200A0006BC11 /* CustomizedVCTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77C0811FE7200A0006BC11 /* CustomizedVCTransitions.swift */; };
 		DEC2C3561FE26A690053B4BE /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C3551FE26A690053B4BE /* GroupCell.swift */; };
 		DEC2C3581FE270B10053B4BE /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C3571FE270B10053B4BE /* Group.swift */; };
 		DEFACE461FDDC99E00A30BE5 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFACE451FDDC99E00A30BE5 /* DataService.swift */; };
@@ -57,6 +58,7 @@
 		DE7311D41FE011BE00FEE753 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		DE77C07D1FE663C40006BC11 /* GroupFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupFeedCell.swift; sourceTree = "<group>"; };
 		DE77C07F1FE676C00006BC11 /* GroupFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupFeedVC.swift; sourceTree = "<group>"; };
+		DE77C0811FE7200A0006BC11 /* CustomizedVCTransitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedVCTransitions.swift; sourceTree = "<group>"; };
 		DEC2C3551FE26A690053B4BE /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		DEC2C3571FE270B10053B4BE /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		DEFACE451FDDC99E00A30BE5 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				DE3686991FE07CB600A74AEC /* BindToKeyBoard.swift */,
+				DE77C0811FE7200A0006BC11 /* CustomizedVCTransitions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				DEFACE4A1FDDDBF600A30BE5 /* LoginVC.swift in Sources */,
 				DE7311D51FE011BE00FEE753 /* AuthService.swift in Sources */,
 				DE77C0801FE676C00006BC11 /* GroupFeedVC.swift in Sources */,
+				DE77C0821FE7200A0006BC11 /* CustomizedVCTransitions.swift in Sources */,
 				DE77C07E1FE663C40006BC11 /* GroupFeedCell.swift in Sources */,
 				DE26BBE41FDDC55300E5489F /* AppDelegate.swift in Sources */,
 				DEFACE4E1FDDE11500A30BE5 /* ShadowView.swift in Sources */,

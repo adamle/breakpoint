@@ -1,6 +1,7 @@
 //
 //  BindToKeyBoard.swift
 //
+//
 //  Created by Le Dang Dai Duong on 12/12/17.
 //  Any object inherit from UIView can be bind to keyboard
 //  Copyright © 2017 Le Dang Dai Duong. All rights reserved.

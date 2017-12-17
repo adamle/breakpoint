@@ -76,7 +76,8 @@ class GroupFeedVC: UIViewController {
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        guard let groupsVC = storyboard?.instantiateViewController(withIdentifier: "groupsVC") as? GroupsVC else { return}
+        dismissDetail(groupsVC)
     }
 }
 
