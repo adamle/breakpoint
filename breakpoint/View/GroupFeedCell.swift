@@ -13,6 +13,10 @@ class GroupFeedCell: UITableViewCell {
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var contentLbl: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
     func configureCell(image: UIImage, email: String, content: String) {
         profileImage.image = image
         emailLbl.text = email

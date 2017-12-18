@@ -16,6 +16,10 @@ class UserCell: UITableViewCell {
     
     var checkMarkShown = false
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
     func configureCell(profileImage image: UIImage, email: String, isSelected: Bool) {
         self.profileImg.image = image
         self.emailLbl.text = email

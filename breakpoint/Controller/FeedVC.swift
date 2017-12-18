@@ -18,7 +18,11 @@ class FeedVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 80
     }
+    
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -26,6 +30,7 @@ class FeedVC: UIViewController {
             // Show the most recent message at the top
             self.messageArray = returnedMessageArray.reversed()
             self.tableView.reloadData()
+
         }
     }
 }

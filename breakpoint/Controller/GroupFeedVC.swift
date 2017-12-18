@@ -29,6 +29,10 @@ class GroupFeedVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 90
+        
         sendView.bindToKeyboard()
         messageTextField.delegate = self
         self.sendBtn.isEnabled = false
@@ -79,6 +83,14 @@ class GroupFeedVC: UIViewController {
         guard let groupsVC = storyboard?.instantiateViewController(withIdentifier: "groupsVC") as? GroupsVC else { return}
         dismissDetail(groupsVC)
     }
+    
+    @IBAction func addMemberBtnPressed(_ sender: Any) {
+        guard let groupMemberVC = storyboard?.instantiateViewController(withIdentifier: "addGroupMemberVC") as? GroupMemberVC else { return}
+        groupMemberVC.group = self.group
+        presentDetail(groupMemberVC)
+    }
+    
+    
 }
 
 extension GroupFeedVC: UITableViewDelegate, UITableViewDataSource {
