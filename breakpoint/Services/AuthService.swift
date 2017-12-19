@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import FBSDKLoginKit
 
 class AuthService {
     static let instance = AuthService()
@@ -37,6 +38,34 @@ class AuthService {
             }
             loginComplete(true, nil)
         }
+    }
+    
+    func loginUserWithFacebook(userCreationComplete: @escaping (_ status: Bool, _ error: Error?) -> ()) {
+        
+        FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start { (connection, result, error) in
+            if error != nil {
+                print("Failed to start graph request:", error ?? "")
+                return
+            }
+//            print(result ?? "")
+        }
+        
+        guard let accessTokenString = FBSDKAccessToken.current().tokenString else { return}
+        let credentials = FacebookAuthProvider.credential(withAccessToken: accessTokenString)
+        
+        Auth.auth().signIn(with: credentials) { (user, error) in
+            guard let user = user else {
+                userCreationComplete(false, error)
+                return
+            }
+            let userData = [
+                "provider": "Facebook",
+                "email": user.email
+            ]
+            DataService.instance.createDBUser(uid: user.uid, userData: userData)
+            userCreationComplete(true, nil)
+        }
+    
     }
     
 }
