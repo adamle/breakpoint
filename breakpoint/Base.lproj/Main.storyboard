@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CZl-P9-aIu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -750,6 +750,17 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ihk-pv-Bbe">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                         <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncp-iG-eae">
+                                                <rect key="frame" x="337" y="15.5" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="N0x-QF-2nC"/>
+                                                    <constraint firstAttribute="height" constant="30" id="RKP-NH-sPA"/>
+                                                </constraints>
+                                                <state key="normal" image="send"/>
+                                                <connections>
+                                                    <action selector="sendBtnPressed:" destination="OVa-qQ-wHr" eventType="touchUpInside" id="bhN-By-YgH"/>
+                                                </connections>
+                                            </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="_ your message" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rUp-AJ-wfQ" customClass="InsetTextField" customModule="breakpoint" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="15" width="321" height="30"/>
                                                 <color key="backgroundColor" red="0.85481929779999999" green="0.72272080179999998" blue="0.063128598029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -760,17 +771,6 @@
                                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncp-iG-eae">
-                                                <rect key="frame" x="337" y="15.5" width="30" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="30" id="N0x-QF-2nC"/>
-                                                    <constraint firstAttribute="height" constant="30" id="RKP-NH-sPA"/>
-                                                </constraints>
-                                                <state key="normal" image="send"/>
-                                                <connections>
-                                                    <action selector="sendBtnPressed:" destination="OVa-qQ-wHr" eventType="touchUpInside" id="EDQ-kq-7YG"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.2033642232" green="0.2145754993" blue="0.2726458907" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>

@@ -15,8 +15,13 @@ class MeVC: UIViewController {
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    let uploadPhotoPikerController = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        uploadPhotoPikerController.delegate = self
+        uploadPhotoPikerController.allowsEditing = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,8 +31,24 @@ class MeVC: UIViewController {
     }
     
     @IBAction func chooseAvatarBtnPressed(_ sender: Any) {
-        guard let chooseAvatarVC = storyboard?.instantiateViewController(withIdentifier: "chooseAvatarVC") as? ChooseAvatarVC else { return}
-        present(chooseAvatarVC, animated: true, completion: nil)
+        let chooseAvatarAC = UIAlertController(title: "_ choose Avatar", message: "Make Your Avatar Great Again", preferredStyle: .actionSheet)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+
+        let defaultAvatarPicker = UIAlertAction(title: "Default Avatar", style: .default) { (buttonTapped) in
+            guard let chooseAvatarVC = self.storyboard?.instantiateViewController(withIdentifier: "chooseAvatarVC") as? ChooseAvatarVC else { return}
+            self.present(chooseAvatarVC, animated: true, completion: nil)
+        }
+        
+        let uploadAvatar = UIAlertAction(title: "Upload Photo", style: .default) { (buttonTapped) in
+            self.handleImagePicker()
+        }
+        
+        chooseAvatarAC.addAction(cancelAction)
+        chooseAvatarAC.addAction(defaultAvatarPicker)
+        chooseAvatarAC.addAction(uploadAvatar)
+        
+        present(chooseAvatarAC, animated: true, completion: nil)
     }
     
     
@@ -50,6 +71,45 @@ class MeVC: UIViewController {
     }
     
 }
+
+extension MeVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func handleImagePicker() {
+        self.present(uploadPhotoPikerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        var selectedImageFromPicker: UIImage?
+        
+        if let editedImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
+            selectedImageFromPicker = editedImage
+        } else if let originalImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
+            selectedImageFromPicker = originalImage
+        }
+        
+        if let selectedImage = selectedImageFromPicker {
+            profileImg.image = selectedImage
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
