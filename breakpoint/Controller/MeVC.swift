@@ -25,6 +25,12 @@ class MeVC: UIViewController {
         self.emailLbl.text = Auth.auth().currentUser?.email
     }
     
+    @IBAction func chooseAvatarBtnPressed(_ sender: Any) {
+        guard let chooseAvatarVC = storyboard?.instantiateViewController(withIdentifier: "chooseAvatarVC") as? ChooseAvatarVC else { return}
+        present(chooseAvatarVC, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func signOutBtnPressed(_ sender: Any) {
         // UI Alert Controller
         let logoutPopup = UIAlertController(title: "Logout?", message: "Are you sure you want to logout?", preferredStyle: .actionSheet)

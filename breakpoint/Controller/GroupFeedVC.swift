@@ -29,13 +29,16 @@ class GroupFeedVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 90
         
         sendView.bindToKeyboard()
         messageTextField.delegate = self
-        self.sendBtn.isEnabled = false
+        sendBtn.isEnabled = false
+        
+        // Tap to dismiss keyboard
+        let tap = UITapGestureRecognizer(target: self, action: #selector(GroupFeedVC.tapToDismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +63,10 @@ class GroupFeedVC: UIViewController {
         }
     }
     
+    @objc func tapToDismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     @IBAction func sendBtnPressed(_ sender: Any) {
         if messageTextField.text != "" {
             // Make sure users don't send multiple messages
@@ -70,7 +77,7 @@ class GroupFeedVC: UIViewController {
                 self.sendBtn.isEnabled = true
                 if success {
                     self.messageTextField.isEnabled = true
-                    self.sendBtn.isEnabled = true
+                    self.sendBtn.isEnabled = false
                     self.messageTextField.text = ""
                 } else {
                     print("Unable to send message in \(String(describing: self.group?.groupTitle))")
@@ -119,7 +126,9 @@ extension GroupFeedVC: UITextFieldDelegate {
         self.sendBtn.isEnabled = true
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-        self.sendBtn.isEnabled = false
+        if self.messageTextField.text == "" {
+            self.sendBtn.isEnabled = false
+        }
     }
 }
 

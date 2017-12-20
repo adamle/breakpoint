@@ -8,10 +8,10 @@
 
 import UIKit
 
-class FeedVC: UIViewController {
+class PublicFeedVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var loader: UIActivityIndicatorView!
     var messageArray = [Message]()
     
     override func viewDidLoad() {
@@ -20,6 +20,12 @@ class FeedVC: UIViewController {
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 80
+        loader.startAnimating()
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000), execute: {
+            self.tableView.isHidden = false
+            self.loader.stopAnimating()
+            self.tableView.reloadData()
+        })
     }
     
     
@@ -30,12 +36,15 @@ class FeedVC: UIViewController {
             // Show the most recent message at the top
             self.messageArray = returnedMessageArray.reversed()
             self.tableView.reloadData()
-
+        }
+        UIView.performWithoutAnimation {
+            tableView.beginUpdates()
+            tableView.endUpdates()
         }
     }
 }
 
-extension FeedVC: UITableViewDelegate, UITableViewDataSource {
+extension PublicFeedVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

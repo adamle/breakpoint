@@ -15,11 +15,13 @@ class CreatePostVC: UIViewController {
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var sendBtn: UIButton!
+    @IBOutlet weak var loader: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         textView.delegate = self
         sendBtn.bindToKeyboard()
+        loader.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +37,12 @@ class CreatePostVC: UIViewController {
             DataService.instance.uploadPost(withMessage: textView.text, forUID: (Auth.auth().currentUser?.uid)!, withGroupKey: nil, sendComplete: { (isComplete) in
                 self.sendBtn.isEnabled = true
                 if isComplete {
-                    self.dismiss(animated: true, completion: nil)
+                    self.loader.isHidden = false
+                    self.loader.startAnimating()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000), execute: {
+                        self.loader.stopAnimating()
+                        self.dismiss(animated: true, completion: nil)
+                    })
                 } else {
                     print("There was an error ")
                 }
