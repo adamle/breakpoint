@@ -82,7 +82,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:dhs-o9-irX:image" translatesAutoresizingMaskIntoConstraints="NO" id="dhs-o9-irX">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:dhs-o9-irX:image" translatesAutoresizingMaskIntoConstraints="NO" id="dhs-o9-irX" customClass="ProfileImageView" customModule="breakpoint" customModuleProvider="target">
                                                     <rect key="frame" x="15" y="19" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="gNY-ag-Nkx"/>
@@ -195,7 +195,7 @@
                                     <constraint firstAttribute="trailing" secondItem="SOK-z3-FxL" secondAttribute="trailing" id="eyv-RV-NP2"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="MTN-oR-MsF">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="MTN-oR-MsF" customClass="ProfileImageView" customModule="breakpoint" customModuleProvider="target">
                                 <rect key="frame" x="16" y="94" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="YdS-lF-K7b"/>
@@ -329,7 +329,7 @@
                                             <action selector="chooseAvatarBtnPressed:" destination="CZl-P9-aIu" eventType="touchUpInside" id="iBk-dN-v3v"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="0WR-z0-MeQ">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="0WR-z0-MeQ" customClass="ProfileImageView" customModule="breakpoint" customModuleProvider="target">
                                         <rect key="frame" x="137" y="24" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="XVb-SZ-9ju"/>
@@ -695,7 +695,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="Nbt-sh-FD4">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="Nbt-sh-FD4" customClass="ProfileImageView" customModule="breakpoint" customModuleProvider="target">
                                                     <rect key="frame" x="15" y="19" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="8BY-kH-7ci"/>
@@ -883,7 +883,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="jcb-Q1-1aR">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="jcb-Q1-1aR" customClass="ProfileImageView" customModule="breakpoint" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="4" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="2V2-yY-Tio"/>
@@ -1073,7 +1073,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="343" height="48"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="NwZ-g9-egc">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="NwZ-g9-egc" customClass="ProfileImageView" customModule="breakpoint" customModuleProvider="target">
                                                             <rect key="frame" x="8" y="4" width="40" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="HJL-NK-zgq"/>

@@ -9,7 +9,6 @@
 import UIKit
 
 class ShadowView: UIView {
-    
     override func awakeFromNib() {
         self.layer.shadowOpacity = 0.5
         self.layer.shadowRadius = 5

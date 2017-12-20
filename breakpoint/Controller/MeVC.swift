@@ -96,6 +96,19 @@ extension MeVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate 
             profileImg.image = selectedImage
         }
         
+        if let uploadData = UIImagePNGRepresentation(profileImg.image!) {
+            DataService.instance.REF_AVATAR.putData(uploadData, metadata: nil, completion: { (metaData, error) in
+                if error != nil {
+                    print(error)
+                    return
+                }
+                if let imageURL = metaData?.downloadURL()?.absoluteString {
+                    DataService.instance.uploadImageToUser(uid: (Auth.auth().currentUser?.uid)!, imageURL: imageURL)
+                }
+            })
+        }
+        
+
         dismiss(animated: true, completion: nil)
     }
     

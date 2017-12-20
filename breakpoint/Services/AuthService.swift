@@ -47,7 +47,6 @@ class AuthService {
                 print("Failed to start graph request:", error ?? "")
                 return
             }
-//            print(result ?? "")
         }
         
         guard let accessTokenString = FBSDKAccessToken.current().tokenString else { return}
