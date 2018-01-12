@@ -95,13 +95,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FET-Cr-X7b">
-                                                    <rect key="frame" x="71" y="39.5" width="289" height="15.5"/>
-                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="13"/>
+                                                    <rect key="frame" x="71" y="39.5" width="289" height="14"/>
+                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                                     <color key="textColor" red="0.31813183430000003" green="0.76720887419999995" blue="0.30419099329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="FET-Cr-X7b" secondAttribute="bottom" constant="5" id="34i-5k-8cS"/>
                                                 <constraint firstItem="FET-Cr-X7b" firstAttribute="leading" secondItem="dhs-o9-irX" secondAttribute="trailing" constant="16" id="MVW-Zw-kO9"/>
                                                 <constraint firstItem="dhs-o9-irX" firstAttribute="top" secondItem="5Za-0m-azF" secondAttribute="topMargin" constant="8" id="O1I-v3-fJz"/>
                                                 <constraint firstItem="FET-Cr-X7b" firstAttribute="top" secondItem="IdN-V3-sBo" secondAttribute="bottom" constant="4" id="VqB-GQ-4u8"/>
@@ -109,7 +110,6 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="FET-Cr-X7b" secondAttribute="trailing" id="e6A-vp-CGx"/>
                                                 <constraint firstItem="IdN-V3-sBo" firstAttribute="top" secondItem="dhs-o9-irX" secondAttribute="top" id="fZa-30-aoT"/>
                                                 <constraint firstItem="dhs-o9-irX" firstAttribute="leading" secondItem="5Za-0m-azF" secondAttribute="leadingMargin" id="jXl-rl-U1q"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="FET-Cr-X7b" secondAttribute="bottom" constant="4" id="u96-bx-y6T"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -208,7 +208,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Say something here ..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="W9V-lY-CFT">
-                                <rect key="frame" x="16" y="170" width="343" height="417"/>
+                                <rect key="frame" x="16" y="217" width="343" height="338"/>
                                 <color key="backgroundColor" red="0.16038811210000001" green="0.1677560508" blue="0.21337759489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.090338774029999999" green="0.71135932209999997" blue="0.69706571100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
@@ -235,22 +235,40 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="color" red="0.31813183430000003" green="0.76720887419999995" blue="0.30419099329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* Maximum character for Feed is 40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHq-Fk-ps2">
+                                <rect key="frame" x="16" y="170" width="246" height="14"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                <color key="textColor" red="0.88366293910000004" green="0.1792323589" blue="0.62713545559999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="deJ-pB-Rdg" userLabel="Liner">
+                                <rect key="frame" x="16" y="200" width="343" height="1"/>
+                                <color key="backgroundColor" red="0.41831988749999999" green="0.4197902584" blue="0.4242013711" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="w1Z-eb-V4e"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.16038811210000001" green="0.1677560508" blue="0.21337759489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="deJ-pB-Rdg" secondAttribute="trailing" constant="16" id="2zs-Fo-M0J"/>
+                            <constraint firstItem="hHq-Fk-ps2" firstAttribute="top" secondItem="MTN-oR-MsF" secondAttribute="bottom" constant="16" id="5vU-i1-udh"/>
                             <constraint firstItem="JsL-y3-EdA" firstAttribute="leading" secondItem="7Ho-Fl-MVC" secondAttribute="leading" id="8Ip-cf-i20"/>
                             <constraint firstItem="JsL-y3-EdA" firstAttribute="top" secondItem="OcN-iU-RFd" secondAttribute="top" id="9V5-Lz-fBP"/>
-                            <constraint firstItem="w3X-Ji-MJq" firstAttribute="top" secondItem="W9V-lY-CFT" secondAttribute="bottom" constant="32" id="BWX-VH-hj1"/>
+                            <constraint firstItem="w3X-Ji-MJq" firstAttribute="top" secondItem="W9V-lY-CFT" secondAttribute="bottom" constant="64" id="BWX-VH-hj1"/>
+                            <constraint firstItem="W9V-lY-CFT" firstAttribute="top" secondItem="deJ-pB-Rdg" secondAttribute="bottom" constant="16" id="G3j-yi-t3t"/>
                             <constraint firstItem="w3X-Ji-MJq" firstAttribute="bottom" secondItem="7Ho-Fl-MVC" secondAttribute="bottom" id="H81-Oy-aSa"/>
                             <constraint firstItem="MTN-oR-MsF" firstAttribute="top" secondItem="JsL-y3-EdA" secondAttribute="bottom" constant="24" id="N1w-Hy-ZgV"/>
                             <constraint firstItem="W9V-lY-CFT" firstAttribute="leading" secondItem="7Ho-Fl-MVC" secondAttribute="leading" constant="16" id="Qyh-s6-Ddc"/>
-                            <constraint firstItem="W9V-lY-CFT" firstAttribute="top" secondItem="MTN-oR-MsF" secondAttribute="bottom" constant="16" id="T8Q-AC-lnD"/>
+                            <constraint firstItem="deJ-pB-Rdg" firstAttribute="top" secondItem="hHq-Fk-ps2" secondAttribute="bottom" constant="16" id="WXS-HA-kKs"/>
                             <constraint firstItem="w3X-Ji-MJq" firstAttribute="leading" secondItem="7Ho-Fl-MVC" secondAttribute="leading" id="Z7y-U6-4cE"/>
                             <constraint firstItem="JsL-y3-EdA" firstAttribute="trailing" secondItem="7Ho-Fl-MVC" secondAttribute="trailing" id="at3-i9-2Fm"/>
                             <constraint firstItem="MTN-oR-MsF" firstAttribute="leading" secondItem="7Ho-Fl-MVC" secondAttribute="leading" constant="16" id="eOR-jy-PIq"/>
+                            <constraint firstItem="hHq-Fk-ps2" firstAttribute="leading" secondItem="7Ho-Fl-MVC" secondAttribute="leading" constant="16" id="hkr-Mz-s7o"/>
                             <constraint firstItem="NXn-Hr-bDZ" firstAttribute="centerY" secondItem="MTN-oR-MsF" secondAttribute="centerY" id="iFY-j1-2Wv"/>
                             <constraint firstItem="NXn-Hr-bDZ" firstAttribute="leading" secondItem="MTN-oR-MsF" secondAttribute="trailing" constant="24" id="jKJ-W4-PgP"/>
                             <constraint firstItem="7Ho-Fl-MVC" firstAttribute="trailing" secondItem="w3X-Ji-MJq" secondAttribute="trailing" id="r2A-fY-pGl"/>
+                            <constraint firstItem="deJ-pB-Rdg" firstAttribute="leading" secondItem="OcN-iU-RFd" secondAttribute="leading" constant="16" id="sib-Ax-z7K"/>
                             <constraint firstItem="7Ho-Fl-MVC" firstAttribute="trailing" secondItem="W9V-lY-CFT" secondAttribute="trailing" constant="16" id="uUv-LO-eVp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Ho-Fl-MVC"/>

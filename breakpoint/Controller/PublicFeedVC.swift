@@ -18,9 +18,8 @@ class PublicFeedVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-//        tableView.rowHeight = UITableViewAutomaticDimension
-//        tableView.estimatedRowHeight = 80
-
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 80
     }
     
     

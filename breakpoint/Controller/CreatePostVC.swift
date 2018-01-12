@@ -39,7 +39,7 @@ class CreatePostVC: UIViewController {
                 if isComplete {
                     self.loader.isHidden = false
                     self.loader.startAnimating()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000), execute: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100), execute: {
                         self.loader.stopAnimating()
                         self.dismiss(animated: true, completion: nil)
                     })
@@ -61,6 +61,14 @@ extension CreatePostVC: UITextViewDelegate {
         textView.textColor = #colorLiteral(red: 0.3181318343, green: 0.7672088742, blue: 0.3041909933, alpha: 1)
         sendBtn.backgroundColor = #colorLiteral(red: 0.2033642232, green: 0.2145754993, blue: 0.2726458907, alpha: 1)
     }
+    
+    // Set maximum 40 characters
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
+        let numberOfChars = newText.count
+        return numberOfChars < 40;
+    }
+    
 }
 
 
