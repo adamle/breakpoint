@@ -21,6 +21,11 @@ class DataService {
     private var _REF_FEED = DB_BASE.child("feed")
     
     private var _REF_AVATAR = STORAGE_BASE.child("avatar")
+    public private(set) var defaultAvatarName = ""
+    
+    func setDefaultAvatar(avatarName: String) {
+        self.defaultAvatarName = avatarName
+    }
     
     var REF_BASE: DatabaseReference {
         return _REF_BASE

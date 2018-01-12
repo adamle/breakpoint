@@ -46,4 +46,17 @@ extension ChooseAvatarVC: UICollectionViewDelegate, UICollectionViewDataSource {
     // send the select cell image to me_VC
     // you can notify profileImgDidChange to the system, so that Me_VC can listen and upload the new data
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let profileImageString = "proLang\(indexPath.item)"
+        DataService.instance.setDefaultAvatar(avatarName: profileImageString)
+        NotificationCenter.default.post(name: NOTIF_USER_CHOOSE_DEFAULT_PROFILE, object: nil)
+        self.dismiss(animated: true, completion: nil)
+    }
 }
+
+
+
+
+
+
+

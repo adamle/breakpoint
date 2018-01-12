@@ -28,16 +28,42 @@ class MeVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         // If you call this in ViewDidLoad, when you log out, the old user email still stay
         self.emailLbl.text = Auth.auth().currentUser?.email
+        
         // This will reload the user profile when log out and then log in right away
         NotificationCenter.default.addObserver(self, selector: #selector(self.userLogin(_:)), name: NOTIF_USER_LOGIN, object: nil)
+        
+        // Observe when user chooses default avatar
+        NotificationCenter.default.addObserver(self, selector: #selector(self.setupDefaultAvatar(_:)), name: NOTIF_USER_CHOOSE_DEFAULT_PROFILE, object: nil)
     }
     
+    // Reload user profile when log out and then log in right away
     @objc func userLogin(_ notif: Notification) {
         // Clear user profile to default
         self.profileImg.image = UIImage(named: "defaultProfileImage")
         loadProfileImage()
+    }
+    
+    // Set up when user chooses default avatar
+    @objc func setupDefaultAvatar(_ notif: Notification) {
+        let imageName = DataService.instance.defaultAvatarName
+        profileImg.image = UIImage(named: imageName)
+        uploadImageDataToFirebase(image: profileImg.image!)
+    }
+    
+    func uploadImageDataToFirebase(image: UIImage) {
+        if let uploadData = UIImagePNGRepresentation(image) {
+            DataService.instance.REF_AVATAR.putData(uploadData, metadata: nil, completion: { (metaData, error) in
+                if error != nil {
+                    return
+                }
+                if let imageURL = metaData?.downloadURL()?.absoluteString {
+                    DataService.instance.uploadImageToUser(uid: (Auth.auth().currentUser?.uid)!, imageURL: imageURL)
+                }
+            })
+        }
     }
     
     @IBAction func chooseAvatarBtnPressed(_ sender: Any) {
@@ -170,16 +196,7 @@ extension MeVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate 
             profileImg.image = selectedImage
         }
         
-        if let uploadData = UIImagePNGRepresentation(profileImg.image!) {
-            DataService.instance.REF_AVATAR.putData(uploadData, metadata: nil, completion: { (metaData, error) in
-                if error != nil {
-                    return
-                }
-                if let imageURL = metaData?.downloadURL()?.absoluteString {
-                    DataService.instance.uploadImageToUser(uid: (Auth.auth().currentUser?.uid)!, imageURL: imageURL)
-                }
-            })
-        }
+        uploadImageDataToFirebase(image: profileImg.image!)
         dismiss(animated: true, completion: nil)
     }
     

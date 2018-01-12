@@ -30,7 +30,7 @@ class PublicFeedVC: UIViewController {
 
         loader.startAnimating()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500), execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(50), execute: {
             DataService.instance.getAllFeedMessages { (returnedMessageArray) in
                 // Show the most recent message at the top
                 self.messageArray = returnedMessageArray.reversed()
