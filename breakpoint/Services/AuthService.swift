@@ -49,7 +49,11 @@ class AuthService {
             }
         }
         
-        guard let accessTokenString = FBSDKAccessToken.current().tokenString else { return}
+        guard let accessTokenString = FBSDKAccessToken.current().tokenString else {
+            print("FB BUG")
+            print(FBSDKAccessToken.current().tokenString)
+            return
+        }
         let credentials = FacebookAuthProvider.credential(withAccessToken: accessTokenString)
         
         Auth.auth().signIn(with: credentials) { (user, error) in

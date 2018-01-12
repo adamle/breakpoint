@@ -18,29 +18,27 @@ class PublicFeedVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 80
-        loader.startAnimating()
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000), execute: {
-            self.tableView.isHidden = false
-            self.loader.stopAnimating()
-            self.tableView.reloadData()
-        })
+//        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.estimatedRowHeight = 80
+
     }
     
     
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        DataService.instance.getAllFeedMessages { (returnedMessageArray) in
-            // Show the most recent message at the top
-            self.messageArray = returnedMessageArray.reversed()
-            self.tableView.reloadData()
-        }
-        UIView.performWithoutAnimation {
-            tableView.beginUpdates()
-            tableView.endUpdates()
-        }
+
+        loader.startAnimating()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500), execute: {
+            DataService.instance.getAllFeedMessages { (returnedMessageArray) in
+                // Show the most recent message at the top
+                self.messageArray = returnedMessageArray.reversed()
+                self.tableView.reloadData()
+                self.tableView.isHidden = false
+                self.loader.stopAnimating()
+            }
+        })
     }
 }
 
@@ -63,18 +61,3 @@ extension PublicFeedVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

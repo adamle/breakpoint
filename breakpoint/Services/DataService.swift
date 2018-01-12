@@ -51,6 +51,14 @@ class DataService {
         REF_USERS.child(uid).updateChildValues(["profileImage": imageURL])
     }
     
+    func fetchImageToUser(uid: String, handler: @escaping(_ imageUrlString: String) -> ()) {
+        REF_USERS.child(uid).observeSingleEvent(of: .value) { (userSnapshot) in
+            let value = userSnapshot.value as? NSDictionary
+            let imageUrl = value?["profileImage"] as? String ?? ""
+            handler(imageUrl)
+        } 
+    }
+    
     func getUsername(forUID uid: String, handler: @escaping (_ username: String) -> ()) {
         // Look at the data once, not continuously
         REF_USERS.observeSingleEvent(of: .value) { (userSnapshot) in

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CZl-P9-aIu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -20,7 +19,7 @@
         <!--Public Feed-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="PublicFeedVC" customModule="breakpoint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PublicFeedVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9pv-A4-QxB" customClass="PublicFeedVC" customModule="breakpoint" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,7 +69,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="color" red="0.31813183430000003" green="0.76720887419999995" blue="0.30419099329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
-                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y8q-Cq-YQd">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="70" estimatedRowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y8q-Cq-YQd">
                                 <rect key="frame" x="0.0" y="70" width="375" height="548"/>
                                 <color key="backgroundColor" red="0.16038811210000001" green="0.1677560508" blue="0.21337759489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.41831988749999999" green="0.4197902584" blue="0.4242013711" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -95,7 +94,7 @@
                                                     <color key="textColor" red="0.090338774029999999" green="0.71135932209999997" blue="0.69706571100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FET-Cr-X7b">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FET-Cr-X7b">
                                                     <rect key="frame" x="71" y="39.5" width="289" height="15.5"/>
                                                     <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="13"/>
                                                     <color key="textColor" red="0.31813183430000003" green="0.76720887419999995" blue="0.30419099329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -342,12 +341,19 @@
                                         <color key="textColor" red="0.31813183430000003" green="0.76720887419999995" blue="0.30419099329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Jwi-Fy-8BS">
+                                        <rect key="frame" x="169" y="56" width="37" height="37"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="color" red="0.31813183430000003" green="0.76720887419999995" blue="0.30419099329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.16038811210000001" green="0.1677560508" blue="0.21337759489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="0WR-z0-MeQ" firstAttribute="centerX" secondItem="lIp-wU-cTG" secondAttribute="centerX" id="LTK-q5-X5W"/>
+                                    <constraint firstItem="Jwi-Fy-8BS" firstAttribute="centerX" secondItem="lIp-wU-cTG" secondAttribute="centerX" id="N4n-u3-0Wu"/>
                                     <constraint firstAttribute="height" constant="270" id="QRU-rL-OGo"/>
                                     <constraint firstItem="TGk-gs-PO3" firstAttribute="top" secondItem="3Tf-54-GyA" secondAttribute="bottom" constant="16" id="TkY-gC-I6t"/>
+                                    <constraint firstItem="Jwi-Fy-8BS" firstAttribute="centerY" secondItem="0WR-z0-MeQ" secondAttribute="centerY" id="TuD-2H-eiF"/>
                                     <constraint firstItem="3Tf-54-GyA" firstAttribute="centerX" secondItem="lIp-wU-cTG" secondAttribute="centerX" id="fYV-Cd-dRr"/>
                                     <constraint firstItem="0WR-z0-MeQ" firstAttribute="top" secondItem="lIp-wU-cTG" secondAttribute="top" constant="24" id="jwh-Hm-lyY"/>
                                     <constraint firstItem="TGk-gs-PO3" firstAttribute="centerX" secondItem="lIp-wU-cTG" secondAttribute="centerX" id="s1S-uG-Ivq"/>
@@ -388,6 +394,7 @@
                     <tabBarItem key="tabBarItem" title="Me" image="me-tabIcon" id="FYG-hm-2l3"/>
                     <connections>
                         <outlet property="emailLbl" destination="TGk-gs-PO3" id="49B-uY-1Jb"/>
+                        <outlet property="loader" destination="Jwi-Fy-8BS" id="a3w-zw-8X1"/>
                         <outlet property="profileImg" destination="0WR-z0-MeQ" id="7OD-d0-d50"/>
                         <outlet property="tableView" destination="LPE-wu-f6g" id="WhX-DN-pZu"/>
                     </connections>

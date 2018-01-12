@@ -37,6 +37,8 @@ class LoginVC: UIViewController {
                         print(String(describing: registrationError?.localizedDescription))
                     }
                 })
+                // Post notif that user is log in
+                NotificationCenter.default.post(name: NOTIF_USER_LOGIN, object: nil)
             })
         }
     }

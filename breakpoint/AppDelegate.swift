@@ -16,12 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+
         // With Firebase Email Login
         // Override point for customization after application launch.
         FirebaseApp.configure()
         if Auth.auth().currentUser == nil {
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let authVC = storyboard.instantiateViewController(withIdentifier: "AuthVC")
             // Make this window key
             window?.makeKeyAndVisible()
@@ -36,9 +36,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        if (FBSDKAccessToken.current() != nil) {
+            print("FB BUG 3")
+        } else {
+            print("FB BUG 1")
+        }
         return true
     }
-
+    
     // Override openURL for Facebook Login
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
@@ -51,7 +56,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //        return handled;
         
         let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
-        
+        print("FB BUG 2")
+        print(FBSDKAccessToken.current().tokenString)
         return handled
     }
     

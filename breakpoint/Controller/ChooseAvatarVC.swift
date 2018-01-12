@@ -42,6 +42,8 @@ extension ChooseAvatarVC: UICollectionViewDelegate, UICollectionViewDataSource {
         return AvatarCell()
     }
     
-    
+    // cell did select
+    // send the select cell image to me_VC
+    // you can notify profileImgDidChange to the system, so that Me_VC can listen and upload the new data
     
 }

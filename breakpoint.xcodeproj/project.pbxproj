@@ -31,6 +31,7 @@
 		DE77C0821FE7200A0006BC11 /* CustomizedVCTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77C0811FE7200A0006BC11 /* CustomizedVCTransitions.swift */; };
 		DE77C0841FE72CB50006BC11 /* GroupMemberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77C0831FE72CB50006BC11 /* GroupMemberVC.swift */; };
 		DE77C0861FE72F630006BC11 /* GroupMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77C0851FE72F630006BC11 /* GroupMemberCell.swift */; };
+		DE9998D32007579C00A7E45F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9998D22007579C00A7E45F /* Constant.swift */; };
 		DEC2C3561FE26A690053B4BE /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C3551FE26A690053B4BE /* GroupCell.swift */; };
 		DEC2C3581FE270B10053B4BE /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C3571FE270B10053B4BE /* Group.swift */; };
 		DEC9A8B31FE9C03E004E99F9 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A8B21FE9C03E004E99F9 /* AvatarCell.swift */; };
@@ -72,6 +73,8 @@
 		DE77C0811FE7200A0006BC11 /* CustomizedVCTransitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedVCTransitions.swift; sourceTree = "<group>"; };
 		DE77C0831FE72CB50006BC11 /* GroupMemberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberVC.swift; sourceTree = "<group>"; };
 		DE77C0851FE72F630006BC11 /* GroupMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberCell.swift; sourceTree = "<group>"; };
+		DE9998D22007579C00A7E45F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		DE9FCE0D2002ABA300C02921 /* breakpoint.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = breakpoint.entitlements; sourceTree = "<group>"; };
 		DEC2C3551FE26A690053B4BE /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		DEC2C3571FE270B10053B4BE /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		DEC9A8B21FE9C03E004E99F9 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
@@ -140,6 +143,8 @@
 		DE26BBE21FDDC55300E5489F /* breakpoint */ = {
 			isa = PBXGroup;
 			children = (
+				DE9FCE0D2002ABA300C02921 /* breakpoint.entitlements */,
+				DE9998D12007572B00A7E45F /* Utilities */,
 				DE26BBFB1FDDC65B00E5489F /* Services */,
 				DE26BBFA1FDDC63300E5489F /* Extension */,
 				DE26BBF91FDDC62600E5489F /* Model */,
@@ -215,6 +220,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		DE9998D12007572B00A7E45F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DE9998D22007579C00A7E45F /* Constant.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -251,6 +264,11 @@
 					DE26BBDF1FDDC55300E5489F = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -359,6 +377,7 @@
 				DE6D70861FE17B0C00D8B34E /* UserCell.swift in Sources */,
 				DE6D70841FE1717200D8B34E /* CreateGroupVC.swift in Sources */,
 				DE3686941FE0728600A74AEC /* CreatePostVC.swift in Sources */,
+				DE9998D32007579C00A7E45F /* Constant.swift in Sources */,
 				DE36869A1FE07CB600A74AEC /* BindToKeyBoard.swift in Sources */,
 				DE36869C1FE0800700A74AEC /* Message.swift in Sources */,
 				DE26BBE61FDDC55300E5489F /* PublicFeedVC.swift in Sources */,
@@ -438,7 +457,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -489,7 +508,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -502,6 +521,7 @@
 			baseConfigurationReference = 701EF0DBC6200735DD2009E0 /* Pods-breakpoint.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = breakpoint/breakpoint.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4H8VZQM87Q;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -522,6 +542,7 @@
 			baseConfigurationReference = 9EC40771766CE2B59D9BD47E /* Pods-breakpoint.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = breakpoint/breakpoint.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4H8VZQM87Q;
 				FRAMEWORK_SEARCH_PATHS = (
