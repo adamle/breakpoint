@@ -38,7 +38,7 @@ class LoginVC: UIViewController {
                     }
                 })
                 // Post notif that user is log in
-                NotificationCenter.default.post(name: NOTIF_USER_LOGIN, object: nil)
+                NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
             })
         }
     }

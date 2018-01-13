@@ -29,7 +29,7 @@ class PublicFeedVC: UIViewController {
 
         loader.startAnimating()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(50), execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(0), execute: {
             DataService.instance.getAllFeedMessages { (returnedMessageArray) in
                 // Show the most recent message at the top
                 self.messageArray = returnedMessageArray.reversed()
@@ -52,10 +52,37 @@ extension PublicFeedVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell") as? FeedCell else { return UITableViewCell()}
-        let image = UIImage(named: "defaultProfileImage")
+        var image = UIImage(named: "defaultProfileImage")
         let message = messageArray[indexPath.row]
+        
         DataService.instance.getUsername(forUID: message.senderID) { (returnedUsername) in
-            cell.configureCell(profileImage: image!, email: returnedUsername, content: message.content)
+            DataService.instance.fetchImageToUser(uid: message.senderID, handler: { (returnedUrl) in
+                
+                if returnedUrl == "" {
+                    cell.configureCell(profileImage: image!, email: returnedUsername, content: message.content)
+                } else {
+                    let url = URL(string: returnedUrl)
+                    let session = URLSession(configuration: .default)
+                    let getImage = session.dataTask(with: url!, completionHandler: { (data, response, error) in
+                        if let error = error {
+                            print("URL loading error: \(error)")
+                            return
+                        } else {
+                            if (response as? HTTPURLResponse) != nil {
+                                if let imageData = data {
+                                    let imageFromData = UIImage(data: imageData)
+                                    DispatchQueue.main.async {
+                                        image = imageFromData
+                                        cell.configureCell(profileImage: image!, email: returnedUsername, content: message.content)
+                                    }
+                                }
+                                print("Success loading image PublicFeedVC")
+                            }
+                        }
+                    })
+                    getImage.resume()
+                }
+            })
         }
         return cell
     }

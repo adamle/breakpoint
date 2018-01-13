@@ -29,8 +29,6 @@ class GroupFeedVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 90
         
         sendView.bindToKeyboard()
         messageTextField.delegate = self
@@ -112,10 +110,37 @@ extension GroupFeedVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "groupFeedCell") as? GroupFeedCell else { return UITableViewCell()}
-        let image = UIImage(named: "defaultProfileImage")
+        var image = UIImage(named: "defaultProfileImage")
         let message = groupMessageArray[indexPath.row]
+        
         DataService.instance.getUsername(forUID: message.senderID) { (returnedUsername) in
-            cell.configureCell(image: image!, email: returnedUsername, content: message.content)
+            DataService.instance.fetchImageToUser(uid: message.senderID, handler: { (returnedUrl) in
+                
+                if returnedUrl == "" {
+                    cell.configureCell(image: image!, email: returnedUsername, content: message.content)
+                } else {
+                    let url = URL(string: returnedUrl)
+                    let session = URLSession(configuration: .default)
+                    let getImage = session.dataTask(with: url!, completionHandler: { (data, response, error) in
+                        if let error = error {
+                            print("URL loading error: \(error)")
+                            return
+                        } else {
+                            if (response as? HTTPURLResponse) != nil {
+                                if let imageData = data {
+                                    let imageFromData = UIImage(data: imageData)
+                                    DispatchQueue.main.async {
+                                        image = imageFromData
+                                        cell.configureCell(image: image!, email: returnedUsername, content: message.content)
+                                    }
+                                }
+                                print("Success loading image GroupFeedVC")
+                            }
+                        }
+                    })
+                    getImage.resume()
+                }
+            })
         }
         return cell
     }

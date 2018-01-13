@@ -13,6 +13,6 @@ let USER_IMAGE_URL = UserDefaults.standard.string(forKey: "userImageUrl")
 let USER_IMAGE_DATA = UserDefaults.standard.data(forKey: "userImageData")
 
 // Notifaction
-let NOTIF_USER_LOGIN = Notification.Name("notifUserLogin")
+let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataDidChange")
 let NOTIF_USER_CHOOSE_DEFAULT_PROFILE = Notification.Name("notifUserChooseDefaultProfile")
 

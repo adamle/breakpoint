@@ -22,6 +22,7 @@ class CreatePostVC: UIViewController {
         textView.delegate = self
         sendBtn.bindToKeyboard()
         loader.isHidden = true
+        loadProfileImageForCurrentUser(atViewController: self, withProfileImage: self.profileImg, andActivityLoader: self.loader)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,7 +30,6 @@ class CreatePostVC: UIViewController {
         // If you call this in ViewDidLoad, when you log out, the old user email still stay
         self.emailLbl.text = Auth.auth().currentUser?.email
     }
-    
 
     @IBAction func sendBtnPressed(_ sender: Any) {
         if textView.text != "" && textView.text != "Say something here ..." {
